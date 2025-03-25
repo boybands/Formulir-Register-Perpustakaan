@@ -1,0 +1,103 @@
+/* FORM REGISTRASI */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 130vh;
+    background-color: #f8f9fa;
+    margin: 0;
+}
+
+form {
+    background-color: #f2f2f2;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 500px; /* Form lebih besar */
+    display: flex;
+    flex-direction: column;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333; /* Warna teks */
+    font-size: 24px; /* Ukuran font yang lebih kecil */
+    line-height: 1.2; /* Jarak antar baris */
+}
+
+label {
+    font-weight: bold;
+    margin-top: 15px; /* Memberi jarak lebih jauh antar label */
+    display: block; /* Agar label berada di atas input */
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px; /* Menambah jarak antara input dan label */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+textarea {
+    resize: vertical;
+    height: 80px;
+}
+
+/* Agar radio button tersusun lebih rapi */
+.radio-group {
+    display: flex;
+    align-items: center; /* Menyelaraskan radio button dan teks */
+    gap: 15px; /* Memberikan jarak antar radio button */
+}
+
+.radio-group input[type="radio"] {
+    margin-right: 5px; /* Memberikan sedikit jarak antara radio button dan teks */
+}
+
+/* Styling untuk tabel */
+table {
+    width: 80%; /* Sesuaikan lebar tabel */
+    margin: 20px auto; /* Menjadikan tabel di tengah */
+    border-collapse: collapse;
+    text-align: left; /* Rata kiri */
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+th {
+    background-color: #f2f2f2;
+    text-align: center;
+}
+
+/* Mengatur h2 agar berada di tengah atas */
+h2 {
+    text-align: center;
+    margin-top: 20px; /* Supaya tidak terlalu ke bawah */
+}
+
+
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px;
+    border: none;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 25px; /* Menambah jarak tombol submit */
+}
+
+button:hover {
+    background-color: #0056b3;
+}
