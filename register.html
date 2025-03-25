@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrasi Anggota Perpustakaan</title>
+    <link rel="stylesheet" href="cantik.css">
+</head>
+<body>
+    <form id="registerForm">
+        <h2>Formulir Registrasi Anggota Perpustakaan</h2>
+
+        <div class="form-group">
+            <label for="nama">Nama Lengkap:</label>
+            <input type="text" id="nama" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="telepon">Nomor Telepon:</label>
+            <input type="number" id="telepon" required>
+        </div>
+
+        <div class="form-group">
+            <label for="alamat">Alamat:</label>
+            <textarea id="alamat" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>Jenis Kelamin:</label>
+            <div class="radio-group">
+                <label for="laki">Pria</label>
+                <input type="radio" id="laki" name="jenis_kelamin" value="Pria" required>
+        
+                <label for="perempuan">Wanita</label>
+                <input type="radio" id="Wanita" name="jenis_kelamin" value="Wanita" required>
+            </div>
+        </div>
+        
+
+        <div class="form-group">
+            <label for="tgl_lahir">Tanggal Lahir:</label>
+            <input type="date" id="tgl_lahir" required>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Buat Password:</label>
+            <input type="password" id="password" required>
+        </div>
+
+        <div class="form-group">
+            <label for="password_confirm">Ulangi Password:</label>
+            <input type="password" id="password_confirm" required>
+        </div>
+
+        <button type="submit">Daftar</button>
+    </form>
+
+    <script>
+        document.getElementById("registerForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            let nama = document.getElementById("nama").value;
+            let email = document.getElementById("email").value;
+            let telepon = document.getElementById("telepon").value;
+            let alamat = document.getElementById("alamat").value;
+            let jenisKelamin = document.querySelector('input[name="jenis_kelamin"]:checked').value;
+            let tglLahir = document.getElementById("tgl_lahir").value;
+            let password = document.getElementById("password").value;
+            let passwordConfirm = document.getElementById("password_confirm").value;
+
+            if (password !== passwordConfirm) {
+                alert("Password tidak cocok! Silakan ulangi.");
+                return;
+            }
+
+            let anggota = JSON.parse(localStorage.getItem("anggota")) || [];
+            anggota.push({ nama, email, telepon, alamat, jenisKelamin, tglLahir });
+
+            localStorage.setItem("anggota", JSON.stringify(anggota));
+
+            window.location.href = "anggota.html";
+        });
+    </script>
+</body>
+</html>
